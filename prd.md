@@ -3,7 +3,7 @@
 
 | Version | Date | Status | Authors |
 |---|---|---|---|
-| v1.1 | 2026-06-12 | Released | Antigravity AI |
+| v1.1 | 2026-06-12 | Released | ANGC Synapse |
 
 ---
 
