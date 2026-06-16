@@ -46,7 +46,7 @@ The system's core functional areas include:
 - Company details include Name, Type (Pvt Ltd, Ltd, LLP, etc.), CIN, PAN, GSTIN, and Registered Address.
 
 ### 3.2. Pre-seeded Work Index Categories
-The platform enforces a pre-seeded, unalterable hierarchy of 22 categories tailored for Indian compliance:
+The platform enforces a pre-seeded, unalterable hierarchy of 22 categories tailored for Indian compliance and open to create your categories and sub categories:
 
 | # | Category | Pre-seeded Sub-folders |
 |---|---|---|
@@ -56,7 +56,7 @@ The platform enforces a pre-seeded, unalterable hierarchy of 22 categories tailo
 | 4 | Fixed Assets | Property, Vehicles, Computers, Furniture |
 | 5 | GST | R-1, 3B, 2A/2B, R-9, GST Payment |
 | 6 | Income Tax Company | ITR, TDS Deposit, Challan, Audit Reports |
-| 7 | ITR Director | 26AS, Balance Sheet, Audit |
+| 7 | ITR Director | 26AS, Balance Sheet, Audit (per director)|
 | 8 | Land Purchase | Sale Deed, Mutation, Registry |
 | 9 | Legal | Court Cases, Advocate Bills |
 | 10 | Loan Details | Term Loan, Vehicle, EMI Schedules |
@@ -77,10 +77,15 @@ The platform enforces a pre-seeded, unalterable hierarchy of 22 categories tailo
 - **Drag & Drop**: React-based file drop zone with upload progress feedback.
 - **Tagging**: Enforced metadata on upload:
   - Title (prefilled from filename, user-editable).
-  - Target Folder (from pre-seeded options or custom subfolders).
-  - Financial Year (e.g. FY 2025-26) selected from a standard dropdown list.
+  - Target Folder (from pre-seeded options or custom subfolders)URL to docs.
+  - Financial Year (e.g. FY 2025-26) selected from a standard dropdown list with month also.
   - Custom searchable tag chips.
 - **File Validation**: Enforced whitelist of extensions: `.pdf`, `.doc`, `.docx`, `.xls`, `.xlsx`, `.jpg`, `.jpeg`, `.png`, `.txt`. Maximum file size cap of 50 MB.
+  - Docs will be encrypted and follow RBAC rules.
+
+- Activity log management with user details.
+- Sharing of documents.
+- Download Access
 
 ### 3.4. Team Management Panel
 - Company Admins can add members by email. The user must already have an account in the system.
@@ -123,19 +128,20 @@ The platform enforces a pre-seeded, unalterable hierarchy of 22 categories tailo
 ## 5. Roadmap
 
 ### Phase 1.1 (Current Release)
-*   Standardized 22 pre-seeded categories.
+*   Standardized 22 pre-seeded categories and also Custome categories.
 *   Strict RBAC enforcement at the Express controller level.
 *   Company Team Management UI panel.
 *   In-app notification system.
 *   Reports dashboard with CSV exports and Print-to-PDF styles.
+*   Email notification integrations for license expiry alerts (under Category 19: Subscription & Renewal).
 
 ### Phase 1.2 (Next Release)
-*   Email notification integrations for license expiry alerts (under Category 19: Subscription & Renewal).
+
 *   Document expiration metadata tags.
 *   Automated endpoint testing suite using Jest/Supertest.
 
 ### Phase 1.3
-*   S3 object storage provider integration.
+*   S3 object storage provider integration(As per need we can change storage provider).
 *   Document version control (upload new version of the same record).
 *   Bulk folder upload.
 
